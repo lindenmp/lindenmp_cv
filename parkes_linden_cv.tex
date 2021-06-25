@@ -9,7 +9,7 @@
 % character encoding
 \usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
 \usepackage{fontawesome}
-% \usepackage{fontspec}
+\usepackage{fontspec}
 \usepackage{tabularx}
 \usepackage{ragged2e}
 
@@ -23,21 +23,6 @@
 \name{Linden}{Parkes, Ph.D.}
 % \title{Postdoctoral Research Fellow}                              
 \address{Department of Bioengineering}{311 Hayden Hall, University of Pennsylvania, Philadelphia, PA 19104}{}
-% \email{lindenmp@seas.upenn.edu}
-% \extrainfo{Twitter: https://twitter.com/LindenParkes \\ Github: github.com/lindenmp}
-% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-% \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
-
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
 
 \newcommand*{\customcventry}[7][.25em]{
   \begin{tabular}{@{}l} 
@@ -178,11 +163,6 @@
   \item Class: Undergraduate Physiology
 \end{itemize}
 }
-
-% \section{Research Skills}
-% \cvitemwithcomment{Programming}{Matlab | BASH | Python}{Extensive programming skills for data processing and analysis}
-% \cvitemwithcomment{Analysis Software}{SPM8/12 | FSL | MRTrix | Freesurfer}{Broad spectrum of analysis software}
-% \cvitemwithcomment{Machine learning}{Unsupervised \& supervised learning}{Application of machine learning to neuroimaging}
 
 \section{Funding (pending)}
 \subsection{Career Transition Awards}
@@ -386,18 +366,6 @@
 \end{itemize}
 }
 
-% \section{References}
-% \begin{cvcolumns}
-%   \cvcolumn[.32]{Person}{\begin{itemize}\item Prof. Murat Yucel \item Prof. Alex Fornito \item Dr. Ben Fulcher \item A/Prof. Conrad Perry \end{itemize}}
-%   \cvcolumn[.40]{Contact}{\begin{itemize}\item murat.yucel@monash.edu \item alex.fornito@monash.edu \item ben.fulcher@monash.edu \item cperry@swin.edu.au \end{itemize}}
-%   \cvcolumn{Affiliation}{\begin{itemize}\item PhD Supervisor \item PhD Supervisor \item PhD Supervisor \item Honours Supervisor \end{itemize}}
-% \end{cvcolumns}
-
-% \newpage
-% \nocite{*}
-% \bibliographystyle{plain}
-% \bibliography{publications}
-% \section{Select Publications: \href{https://scholar.google.com.au/citations?user=JT4AhnoAAAAJ&hl=en}{\textit{[Google Scholar]}}}
 \section{Select Publications}
 \cvitem{}{\emph{Citations = 690, h-index = 13, i10-index = 16}}}
 \cvitem{}{\emph{For a complete list of my publications see my \href{https://scholar.google.com.au/citations?user=JT4AhnoAAAAJ&hl=en}{\textcolor{blue}{Google Scholar}}}}
@@ -429,47 +397,6 @@
 
 \cvitem{}{\textbf{Parkes L}, Perry C, \& Goodin P (2016). Examining the N400m in affectively negative sentences. A magnetoencephalography study. \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/psyp.12601}{\emph{\textcolor{blue}{Psychophysiology}}}.}
 
-
-% \cvitem{}{}
-% \subsection{Middle-author}
-% \cvitem{}{*Oldham S, Fulcher B, \textbf{Parkes L}, Arnatkeviciute A, Suo C \& Fornito A (2019). Consistency and differences between centrality metrics across distinct classes of networks. \textit{PLoS One}. \newline \textit{*Student mentee.}}
-% \cvitem{}{}
-
-% \cvitem{}{*Sabaroedin K, Tiego J, \textbf{Parkes L}, Sforazzini F, Finlay A, Johnson B, Pinar A, Cropley V, Harrison BJ, Zalesky A, Pantelis C, Belgrove M \& Fornito A (2019). Functional Connectivity of Corticostriatal Circuitry and Psychosis-Like Experiences in the General Community. \textit{Biological Psychiatry}. \newline \textit{*Student mentee.}}
-% \cvitem{}{}
-
-% \cvitem{}{Chamberlain SR, Tiego J, Fontenelle LF, Hook R, \textbf{Parkes L}, Segrave L, Hauser TU, Dolan RJ, Goodyer IM, Bullmore E, Grant JE \& Yucel M (2019). Fractionation of impulsive and compulsive trans-diagnostic phenotypes and their longitudinal associations. \textit{Australian \& New Zealand Journal of Psychiatry}.}
-% \cvitem{}{}
-
-% \cvitem{}{Contreras-Rodriguez O, Burrows T, Pursey KM, Stanwell P , \textbf{Parkes L}, Soriano-Mas C \& Verdejo-Garcia A (2019). Food addiction linked to changes in ventral striatum functional connectivity between fasting and satiety. \textit{Appetite}.}
-% \cvitem{}{}
-
-% \cvitem{}{Jamadar SD, Ward PGD, Carey A, McIntyre R, \textbf{Parkes L}, Sasan D, Fallon J, Li S, Chen Z \& Egan G (2019). Constant Infusion Radiotracer Administration for High Temporal Resolution Positron Emission Tomography (PET) of the Human Brain: Application to [18F]-Fluorodexoyglucose PET (FDG-PET). \textit{bioRxiv}.}
-% \cvitem{}{}
-
-% \cvitem{}{Aquino KM, Fulcher BD, \textbf{Parkes L}, Sabaroedin K \& Fornito A (2019). Identifying and removing widespread signal deflections from fMRI data: Rethinking the global signal regression problem. \textit{bioRxiv}.}
-% \cvitem{}{}
-
-% \cvitem{}{*Fallon J, Ward PGD, \textbf{Parkes L}, Oldham S, Arnatkeviciute A, Fornito A \& Fulcher BD (2019). Timescales of spontaneous activity fluctuations relate to structural connectivity in the brain. \textit{bioRxiv}. \newline \textit{*Student mentee.}}
-% \cvitem{}{}
-
-% \cvitem{}{*Tiego J, *Oostermeijer S, Prochazkova L, \textbf{Parkes L}, Dawson A, Youssef G, Oldenhof E, Carter A, Segrave RA, Fontenelle LF \& Yucel M (2018). Overlapping dimensional phenotypes of impulsivity and compulsivity explain co-occurence of addictive and related behaviors. \textit{CNS Spectrums}. \newline \textit{*These authors contributed equally.}}
-% \cvitem{}{}
-
-% \cvitem{}{*Den Ouden L, Kandola A, Suo C, Hendrikse J, Costa R, Watt MJ, Lorenzetti V, Chye Y, \textbf{Parkes L}, Sabaroedin K, \& Yucel M (2018). The influence of aerobic exercise on hippocampal integrity and function: preliminary findings of a multi-modal imaging analysis. \textit{Brain Plasticity}. \newline \textit{*Student mentee.}}
-% \cvitem{}{}
-
-% \cvitem{}{Bennet D, Oldham S, Dawson A, \textbf{Parkes L}, Murawski C, \& Yucel M (2017). Systematic overestimation of reflection impulsivity in the Information Sampling Task. \textit{Biological Psychiatry}.}
-% \cvitem{}{}
-
-% \cvitem{}{Yucel M, Carter A, Allen AR, Balleine B, Clark L, Dowling NA, Gainsbury SM, Goudriaan AE, Grant J, Hayes A, Hodgins D, van Holst R, Lattimore R, Livingstone C, Lorenzetti V, Lubman D, Murawski C, \textbf{Parkes L}, Petry N, Room R, Singh B, Thomas A, Townshend P, Youssef G, \& Hall W (2017). Neuroscience in gambling policy and treatment: an interdisciplinary perspective. \textit{The Lancet Psychiatry}.}
-% \cvitem{}{}
-
-% \cvitem{}{*Guo K, Youssef GJ, Dawson A, \textbf{Parkes L}, Oostermeijer S, López-Solà C, Lorenzetti V, Greenwood C, Fontenelle LF, \& Yucel M (2017). A psychometric validation study of the Impulsive-Compulsive Behaviours Checklist: A transdiagnostic tool for addictive and compulsive behaviours. \textit{Addictive behaviors}. \newline \textit{*Student mentee.}}
-% \cvitem{}{}
-
-% \cvitem{}{Jung WH, Yucel M, Yun J, Yoon YB, Cho KIK, \textbf{Parkes L}, Kim SN, \& Kwon JS (2017). Altered functional network architecture in orbitofronto striato thalamic circuit of unmedicated patients with obsessive compulsive disorder. \textit{Human Brain Mapping}.}
-% \cvitem{}{}
 
 \subsection{Book chapters}
 \cvitem{}{Segrave RA, Hendrikse J, \& \textbf{Parkes L}, (2019). DBS, TMS and tDCS for obsessive compulsive disorder. In \textit{A Transdiagnostic Approach to Obsessions, Compulsions and Related Phenomena}. Cambridge University Press}
