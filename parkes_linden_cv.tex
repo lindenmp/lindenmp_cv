@@ -1,27 +1,30 @@
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
-\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
 \usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\usepackage{fontawesome}
+% \usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{ragged2e}
 
 % adjust the page margins
 \usepackage[scale=0.9]{geometry}
-\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+% \setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 \usepackage{xcolor}
 
 % personal data
 \name{Linden}{Parkes, Ph.D.}
-\title{Postdoctoral Research Fellow}                              
-\address{Department of Bioengineering}{311 Hayden Hall, University of Pennsylvania}{Philadelphia, PA 19104}
-\email{lindenmp@seas.upenn.edu}
-\extrainfo{Twitter: https://twitter.com/LindenParkes \\ Github: github.com/lindenmp}
+% \title{Postdoctoral Research Fellow}                              
+\address{Department of Bioengineering}{311 Hayden Hall, University of Pennsylvania, Philadelphia, PA 19104}{}
+% \email{lindenmp@seas.upenn.edu}
+% \extrainfo{Twitter: https://twitter.com/LindenParkes \\ Github: github.com/lindenmp}
 % \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
 % \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 % \quote{Some quote}                                 % optional, remove / comment the line if not wanted
@@ -35,6 +38,47 @@
 % bibliography with mutiple entries
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
+
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcventryalt}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
@@ -42,34 +86,98 @@
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
+\vspace*{-15mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faGlobe\enspace lindenparkes.com & \faEnvelopeO\enspace lindenmp@seas.upenn.edu & \faGithub\enspace lindenmp & \faTwitter\enspace LindenParkes\\  
+\end{tabular}
+\end{center}
 
 \section{Academic Positions}
-\cventry{July 2019--\\present}{Postdoctoral Research Fellow}{Department of Bioengineering}{}{}{The University of Pennsylvania, Pennsylvania, USA}
-\cvitem{Advisors}{\emph{Prof. Danielle S. Bassett, Associate Prof. Theodore Satterthwaite}}
 
-\cventry{Sept. 2018--\\Oct. 2018}{Visiting Scholar}{Donders Institute for Brain, Cognition and Behaviour}{}{}{Radboud University, Nijmegen, The Netherlands}
-\cvitem{Advisors}{\emph{Prof. Christian Beckmann, Dr. Andre Marquand}}
+{\customcventry{July 2019 - present}{University of Pennsylvania, Department of Bioengineering}{Postdoctoral Research Fellow}{Philadelphia, PA}{}
+{\begin{itemize}
+  \item Advisors: Prof. Danielle S. Bassett, Associate Prof. Theodore D. Satterthwaite
+\end{itemize}
+}
+
+{\customcventry{Sept. 2018 - Oct. 2018}{Donders Institute for Brain, Cognition and Behaviour}{Visiting Scholar}{Nijmegen, The Netherlands}{}
+{\begin{itemize}
+  \item Advisors: Prof. Christian Beckmann, Dr. Andre Marquand
+\end{itemize}
+}
 
 \section{Education}
-\cventry{2014--June 2019}{Doctor of Philosophy}{Brain \& Mental Health Research Hub}{}{}{Monash University, Melbourne, Australia}
-\cvitem{Thesis}{\textit{Mapping brain networks in health and mental disorder with structural and functional Magnetic Resonance Imaging.}}
-\cvitem{Supervisors}{\emph{Prof. Murat Yucel, Prof. Alex Fornito, Dr. Ben Fulcher}}
 
-\cventry{2009--2013}{Bachelor of Science (Honors)}{\textit{First Class. Dux}}{}{}{Swinburne University of Technology, Melbourne, Australia}
-\cvitem{Thesis}{\textit{Mapping language processes using Magnetoencephalography.}}
-\cvitem{Supervisor}{\emph{A/Prof. Conrad Perry}}
+{\customcventry{March 2014 - June 2019}{Monash University}{Doctor of Philosophy}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Thesis: Mapping brain networks in health and mental disorder with structural and functional Magnetic Resonance Imaging
+  \item Advisors: Prof. Murat Yucel, Prof. Alex Fornito, Dr. Ben Fulcher
+\end{itemize}
+}
 
-\section{Teaching}
-\cventry{2020}{Teacher's Assistant}{Network Neuroscience (course evaluation score: 3.57/4)}{}{}{Department of Bioengineering, The University of Pennsylvania}
-\cventry{2019}{Guest Lecturer}{Network Neuroscience}{}{}{Department of Bioengineering, The University of Pennsylvania}
-\cventry{2017--2018}{Guest Lecturer}{Neuroscience Methods}{}{}{Monash University, Melbourne, Australia}
-\cventry{2014--2015}{Recitation Tutor}{Undergraduate Psychology}{}{}{Swinburne University, Melbourne, Australia}
-\cventry{2013}{Recitation Tutor}{Undergraduate Physiology}{}{}{Swinburne University, Melbourne, Australia}
+{\customcventry{2009 - 2013}{Swinburne University of Technology}{Bachelor of Science (Honors)}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Thesis: Mapping language processes using Magnetoencephalography.
+  \item Advisor: Associate Prof. Conrad Perry
+  \item Honors, First Class
+  \item Dux
+\end{itemize}
+}
 
 \section{Research Employment}
-\cventry{2018}{Research Assisstant}{Monash Biomedical Imaging}{}{}{Monash University, Melbourne, Australia}
-\cventry{2016--2017}{Industry-based Researcher}{Developing gamified cognitive tests for neuroscience}{}{}{Torus Games \& Cogstate, Melbourne, Australia}
-\cventry{2013}{Magnetoencephalography Technician}{}{}{}{Swinburne Univerisity, Melbourne, Australia}
+
+{\customcventry{2018}{Monash Biomedical Imaging}{Research Assisstant}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Analysis of positron emission tomography (PET) data
+\end{itemize}
+}
+
+{\customcventry{2016 - 2017}{Torus Games \& Cogstate}{Research Engineer}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Developed gamified cognitive tests for neuroscience research
+\end{itemize}
+}
+
+{\customcventry{2013}{Swinburne Univerisity}{Magnetoencephalography Technician}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Collection, preprocessing, and analysis of Magnetoencephalography (MEG) data
+\end{itemize}
+}
+
+\section{Teaching}
+
+{\customcventry{2020}{University of Pennsylvania, Department of Bioengineering}{Teacher's Assistant}{Philadelphia, PA}{}
+{\begin{itemize}
+  \item Class: Network Neuroscience
+  \item Course evaluation score: 3.57/4
+\end{itemize}
+}
+
+{\customcventry{2019}{University of Pennsylvania, Department of Bioengineering}{Guest Lecturer}{Philadelphia, PA}{}
+{\begin{itemize}
+  \item Class: Network Neuroscience
+\end{itemize}
+}
+
+{\customcventry{2017 - 2018}{Monash University}{Guest Lecturer}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Class: Neuroscience Methods
+\end{itemize}
+}
+
+{\customcventry{2014 - 2015}{Swinburne University}{Recitation Tutor}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Class: Undergraduate Psychology
+\end{itemize}
+}
+
+{\customcventry{2013}{Swinburne University}{Recitation Tutor}{Melbourne, Australia}{}
+{\begin{itemize}
+  \item Class: Undergraduate Physiology
+\end{itemize}
+}
 
 % \section{Research Skills}
 % \cvitemwithcomment{Programming}{Matlab | BASH | Python}{Extensive programming skills for data processing and analysis}
@@ -78,72 +186,205 @@
 
 \section{Funding (pending)}
 \subsection{Career Transition Awards}
-\cventry{2021}{K99/R00 Pathway to Independence Award}{\$969,546 USD (sole recipient)}{received competitive impact score and program official has endorsed application for funding}{}{National Institute of Mental Health (HIMH)}
+{\customcventryalt{K99/R00 Pathway to Independence Award}{2021 - 2026}{National Institute of Mental Health (NIMH)}
+{\begin{itemize}
+  \item Project title: Developing prognostic neuroimaging biomarkers of the psychosis spectrum using network control theory
+  \item \$969,546 USD
+  \item Received competitive impact score and program official has endorsed application for funding
+\end{itemize}
+}
 
 \section{Funding (awarded)}
 \subsection{Fellowships \& Scholarships}
-\cventry{2020}{Young Investigator Award}{\$70,000 USD (sole recipient)}{}{}{Brain \& Behavior Research Foundation}
-\cventry{2018}{Monash University Postgraduade Publication Award}{\$6,300 AUD (sole recipient)}{}{}{Monash University, Melbourne, Australia}
-\cventry{2014--2018}{Monash University Graduate Research Scholarship}{\$20,000 AUD (sole recipient)}{}{}{Monash University, Melbourne, Australia}
-\cventry{2014--2018}{Australian Postgraduate Award Research Scholarship}{\$91,000 AUD (sole recipient)}{}{}{Australian Government}
+
+{\customcventryalt{Young Investigator Award}{2021 - 2022}{Brain \& Behavior Research Foundation}{}{}
+{\begin{itemize}
+  \item Project title: Hybrid neurodevelopmental normative models for psychosis
+  \item \$70,000 USD
+\end{itemize}
+}
+
+{\customcventryalt{Monash University Postgraduade Publication Award}{2018}{Monash University}{}{}
+{\begin{itemize}
+  \item \$6,300 AUD
+\end{itemize}
+}
+
+{\customcventryalt{Monash University Graduate Research Scholarship}{2014 - 2018}{Monash University}{}{}
+{\begin{itemize}
+  \item \$20,000 AUD
+\end{itemize}
+}
+
+{\customcventryalt{Australian Postgraduate Award Research Scholarship}{2014 - 2018}{Australian Government}{}{}
+{\begin{itemize}
+  \item \$91,000 AUD
+\end{itemize}
+}
 
 \subsection{Grants}
-\cventry{2016}{Innovations Connections Grant}{\$50,000 AUD (associate investigator)}{}{}{Department of Industry, Innovation and Science, Australia}
+{\customcventryalt{Innovations Connections Grant}{2016 - 2017}{Department of Industry, Innovation and Science, Australia}{}{}
+{\begin{itemize}
+  \item \$50,000 AUD
+  \item Associate investigator
+\end{itemize}
+}
 
-\subsection{Awards}
-\cventry{2021}{Abstract Merit Award}{\$0 USD (virtual)}{}{}{The Organization of Human Brain Mapping}
-\cventry{2020}{Abstract Merit Award}{\$3,000 USD}{}{}{The Organization of Human Brain Mapping}
-\cventry{2018}{Donders-Monash Erasmus Travel Award}{\$3,200 AUD}{}{}{Donders Institute for Brain, Cognition and Behaviour, Radboud University, The Netherlands}
-\cventry{2015}{Future Leaders Travel Award}{\$5,000 AUD}{}{}{Monash Institute of Cognitive and Clinical Neurosciences, Monash University, Australia}
+\subsection{Travel Awards}
+{\customcventryalt{Abstract Merit Award}{2021}{Organization for Human Brain Mapping}{}{}
+{\begin{itemize}
+  \item virtual, no monetary component
+\end{itemize}
+}
 
+{\customcventryalt{Abstract Merit Award}{2020}{Organization for Human Brain Mapping}{}{}
+{\begin{itemize}
+  \item \$3,000 USD
+\end{itemize}
+}
 
-\section{Conference oral presentations}
-\cventry{2021}{Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms}{The Organization of Human Brain Mapping}{3-minute summary available on \href{https://youtu.be/1sE8RMU1Kkg}{\textcolor{blue}{YouTube}}}{}{}{}
-\cventry{2020}{Average controllability better predicts cognition when compared to strength}{The Organization of Human Brain Mapping}{}{}{}{}
-\cventry{2020}{Psychopathology Phenotypes Explain Individual’s Unique Deviations from Normative Neurodevelopment}{The Organization of Human Brain Mapping}{}{}{}{}
-% \cventry{2015}{Transcriptional signatures of connectomic subregions of the human striatum}{Students of Brain Research}{}{}{}{}
-% \cventry{2013}{Examining the N400m in affectively negative sentences. A magnetoencephalography study}{Australasian Cognitive Neuroscience Conference}{2013}{}{}{}
+{\customcventryalt{Donders-Monash Erasmus Travel Award}{2018}{Donders Institute for Brain, Cognition and Behaviour | Monash University}{}{}
+{\begin{itemize}
+  \item \$3,200 AUD
+\end{itemize}
+}
 
-\section{Invited talks}
-\cventry{2021}{Network Neuroscience}{DataPhilly}{available on \href{https://youtu.be/VdR5KmZ3OIU}{\textcolor{blue}{YouTube}}}{}{}
-\cventry{2018}{Dimensional psychiatry in corticostriatal circuits: lessons learnt from resting-state fMRI data}{The University of Pennsylvania}{}{}{}
-\cventry{2018}{Transdiagnostic biomarkers in psychiatry}{Centre of Excellence for Integrative Brain Function}{Melbourne, Australia}{}{}
-\cventry{2016}{Confounds in rs-fMRI processing}{Swinburne Univerisity}{Melbourne, Australia}{}{}
+{\customcventryalt{Future Leaders Travel Award}{2015}{Monash Institute of Cognitive and Clinical Neurosciences}{}{}
+{\begin{itemize}
+  \item \$5,000 AUD
+\end{itemize}
+}
 
-\section{Conference poster presentations}
-\cventry{2021}{Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms}{Society of Biological Psychiatry}{}{}{}
-\cventry{2019}{Impulsivity and compulsivity correlate with effective connectivity in corticostriatal circuits}{Organization of Human Brain Mapping}{}{}{}
-\cventry{2018}{Impulsivity and compulsivity correlate with effective connectivity in corticostriatal circuits}{Australasian Cognitive Neuroscience Conference}{}{}{}
-\cventry{2018}{Evaluating the efficacy and sensitivity of motion correction strategies for rs-fMRI}{Organization of Human Brain Mapping}{}{}{}
-\cventry{2017}{An evaluation of the efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI}{IEEE International Symposium on Biomedical Imaging}{}{}{}
-% \cventry{2017}{An evaluation of the efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI}{Students of Brain Research}{}{}{}
+\section{Presentations}
+
+{\customcventryalt{Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms}{2021}{Organization for Human Brain Mapping}
+{\begin{itemize}
+  \item Oral presention
+  \item 3-minute summary available on \href{https://youtu.be/1sE8RMU1Kkg}{\textcolor{blue}{YouTube}}
+\end{itemize}
+}
+
+{\customcventryalt{Network Neuroscience}{2021}{DataPhilly}
+{\begin{itemize}
+  \item Invited talk
+  \item available on \href{https://youtu.be/VdR5KmZ3OIU}{\textcolor{blue}{YouTube}}
+\end{itemize}
+}
+
+{\customcventryalt{Average controllability better predicts cognition when compared to strength}{2020}{Organization for Human Brain Mapping}
+{\begin{itemize}
+  \item Oral presention
+\end{itemize}
+}
+
+{\customcventryalt{Psychopathology explain individual’s unique deviations from normative neurodevelopment}{2020}{Organization for Human Brain Mapping}
+{\begin{itemize}
+  \item Oral presention
+\end{itemize}
+}
+
+{\customcventryalt{Dimensional psychiatry in corticostriatal circuits: lessons learnt from resting-state fMRI data}{2018}{University of Pennsylvania}
+{\begin{itemize}
+  \item Invited talk
+\end{itemize}
+}
+
+{\customcventryalt{Transdiagnostic biomarkers in psychiatry}{2018}{Centre of Excellence for Integrative Brain Function, Melbourne, Australia}
+{\begin{itemize}
+  \item Invited talk
+\end{itemize}
+}
+
+{\customcventryalt{Confounds in rs-fMRI processing}{2016}{Swinburne Univerisity, Melbourne, Australia}
+{\begin{itemize}
+  \item Invited talk
+\end{itemize}
+}
+
+{\customcventryalt{Transcriptional signatures of connectomic subregions of the human striatum}{2015}{Students of Brain Research, Melbourne, Australia}
+{\begin{itemize}
+  \item Oral presention
+\end{itemize}
+}
+
+{\customcventryalt{Examining the N400m in affectively negative sentences. A magnetoencephalography study}{2013}{Australasian Cognitive Neuroscience Conference}
+{\begin{itemize}
+  \item Oral presention
+\end{itemize}
+}
+
+\section{Posters}
+\subsection{First Author}
+{\customcventryalt{Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms}{2021}{Organization for Human Brain Mapping}}
+{\customcventryalt{Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms}{2021}{Society of Biological Psychiatry}}
+{\customcventryalt{Psychopathology explain individual’s unique deviations from normative neurodevelopment}{2020}{Organization for Human Brain Mapping}
+{\customcventryalt{Impulsivity and compulsivity correlate with effective connectivity in corticostriatal circuits}{2019}{Organization for Human Brain Mapping}}
+{\customcventryalt{Impulsivity and compulsivity correlate with effective connectivity in corticostriatal circuits}{2018}{Australasian Cognitive Neuroscience Conference}}
+{\customcventryalt{Evaluating the efficacy and sensitivity of motion correction strategies for rs-fMRI}{2018}{Organization for Human Brain Mapping}}
+{\customcventryalt{Efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI}{2017}{IEEE International Symposium on Biomedical Imaging}}
+{\customcventryalt{Efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI}{2017}{Students of Brain Research}}
 
 \section{Academic Service}
-\subsection{Peer Review}
-\cventry{}{Biological Psychiatry | Psychological Medicine | Neuropsychologia | NeuroImage: Clinical | Psychiatry Research: Neuroimaging | Harvard Review of Psychiatry | International Gambling Studies}{}{}{}{}
-\cventry{}{NeuroImage | Human Brain Mapping | Network Neuroscience | Scientific Reports}{}{}{}{}
-% | Journal of Cerebral Blood Flow \& Metabolism
-
 \subsection{Committees}
-\cventry{2019-2021}{Organization of Human Brain Mapping}{Student and Postdoc Special Interest Group}{Treasurer}{}{}
-\cventry{2017}{Australasian Cognitive Neuroscience Society}{Early Career Researchers Committee}{}{}{}
-\cventry{2017}{Australasian Cognitive Neuroscience Society}{Executive Committee}{}{}{}
-\cventry{2016}{Students of Brain Research}{Committee}{Treasurer}{}{}{}
+
+{\customcventryalt{Organization for Human Brain Mapping, Student and Postdoc Special Interest Group}{2019 - 2021}{Treasurer}}
+{\customcventryalt{Australasian Cognitive Neuroscience Society, Early Career Researchers Committee}{2017}{Committee Member}}
+{\customcventryalt{Australasian Cognitive Neuroscience Society, Executive Committee}{2017}{Committee Member}}
+{\customcventryalt{Students of Brain Research}{2016}{Treasurer}}
 
 \subsection{Supervision \& Mentorship}
-\cventry{2018--current}{Ashlea Segal}{PhD Student}{Monash University}{}{}
-\cventry{2018}{Tayla Currie}{Honours Student}{Monash University}{}{}
-\cventry{2017}{John Fallon}{Honours Student}{Monash University}{}{}
-\cventry{2016}{Luisa Prochazkova}{International Intern}{Monash University}{}{}
-\cventry{2016}{Kristina Sabaroedin}{Honours Student}{Monash University}{}{}
-\cventry{2016}{Lauren Den Ouden}{Honours Student}{Monash University}{}{}
-\cventry{2016}{Stuart Oldham}{Honours Student}{Monash University}{}{}
-\cventry{2016}{Danielle Amiet}{Honours Student}{Monash University}{}{}
+{\customcventryalt{Ashlea Segal}{2018 - present}{PhD Student, Monash University}}
+{\customcventryalt{Tayla Currie}{2018}{Honors Student, Monash University}}
+{\customcventryalt{John Fallon}{2017}{Honors Student, Monash University}}
+{\customcventryalt{Luisa Prochazkova}{2016}{International Intern, Monash University}}
+{\customcventryalt{Kristina Sabaroedin}{2016}{Honors Student, Monash University}}
+{\customcventryalt{Lauren Den Ouden}{2016}{Honors Student, Monash University}}
+{\customcventryalt{Stuart Oldham}{2016}{Honors Student, Monash University}}
+{\customcventryalt{Danielle Amiet}{2016}{Honors Student, Monash University}}
 
 \subsection{Outreach and community engagement}
-\cventry{2018}{NeuroDay}{Co-organiser}{Methodist Ladies' College}{Melbourne, Australia}{}
-\cventry{2018}{BMH Mentor Forum}{Co-organiser}{Brain \& Mental Health Research Hub}{Monash University}{}
-\cventry{2014--2015}{MBI Student Forum}{Co-organiser}{Monash Biomedical Imaging}{Monash University}{}
+{\customcventryalt{International Mentoring Programme}{2021}{Organization for Human Brain Mapping, Student and Postdoc Special Interest Grou}}
+{\begin{itemize}
+  \item Mentor
+\end{itemize}
+}
+
+{\customcventryalt{NeuroDay}{2018}{Methodist Ladies' College, Melbourne, Australia}}
+{\begin{itemize}
+  \item Co-organizer
+  \item Presenter
+\end{itemize}
+}
+
+{\customcventryalt{BMH Mentor Forum}{2018}{Brain \& Mental Health Research Hub, Monash University}}
+{\begin{itemize}
+  \item Co-organizer
+  \item Mentor
+\end{itemize}
+}
+{\customcventryalt{MBI Student Forum}{2014 - 2015}{Monash Biomedical Imaging, Monash University}}
+{\begin{itemize}
+  \item Co-organizer
+  \item Presenter
+\end{itemize}
+}
+
+\subsection{Peer Review}
+{\begin{itemize}
+  \item NeuroImage
+  \item Human Brain Mapping
+  \item Network Neuroscience
+  \item Scientific Reports
+  \item Biological Psychiatry
+  \item Psychological Medicine
+  \item Neuropsychologia
+  \item NeuroImage: Clinical
+  \item Psychiatry Research: Neuroimaging
+  \item Harvard Review of Psychiatry
+  \item International Gambling Studies
+  \item Journal of Cerebral Blood Flow \& Metabolism
+\end{itemize}
+}
 
 % \section{References}
 % \begin{cvcolumns}
@@ -158,29 +399,36 @@
 % \bibliography{publications}
 % \section{Select Publications: \href{https://scholar.google.com.au/citations?user=JT4AhnoAAAAJ&hl=en}{\textit{[Google Scholar]}}}
 \section{Select Publications}
-\cvitem{}{For a complete list of my publications see \href{https://scholar.google.com.au/citations?user=JT4AhnoAAAAJ&hl=en}{\textcolor{blue}{here}}}
+\cvitem{}{\emph{Citations = 690, h-index = 13, i10-index = 16}}}
+\cvitem{}{\emph{For a complete list of my publications see my \href{https://scholar.google.com.au/citations?user=JT4AhnoAAAAJ&hl=en}{\textcolor{blue}{Google Scholar}}}}
 
-% \subsection{First-author}
-\cvitem{}{\textbf{Parkes L}, Moore TM, Calkins ME, Cieslak M, Roalf DR, Wolf DH, Gur RC, Gur RE, Satterthwaite TD \& Bassett DS (2021). Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms. \textit{Biological Psychiatry}.}
+\subsection{First-author}
+\cvitem{}{\textbf{Parkes L}, Moore TM, Calkins ME, Cieslak M, Roalf DR, Wolf DH, Gur RC, Gur RE, Satterthwaite TD \& Bassett DS (2021). Network controllability in transmodal cortex predicts positive psychosis spectrum symptoms. \href{https://www.sciencedirect.com/science/article/pii/S0006322321011756}{\emph{\textcolor{blue}{Biological Psychiatry}}}. \newline}
 
-\cvitem{}{\textbf{Parkes L}, Moore TM, Calkins ME, Cook PA, Cieslak M, Roalf DR, Wolf DH, Gur RC, Gur RE, Satterthwaite TD \& Bassett DS (2021). Transdiagnostic dimensions of psychopathology explain individuals' unique deviations from normative neurodevelopment in brain structure. \textit{Translational Psychiatry}.}
+\cvitem{}{\textbf{Parkes L}, Moore TM, Calkins ME, Cook PA, Cieslak M, Roalf DR, Wolf DH, Gur RC, Gur RE, Satterthwaite TD \& Bassett DS (2021). Transdiagnostic dimensions of psychopathology explain individuals' unique deviations from normative neurodevelopment in brain structure. \href{https://www.nature.com/articles/s41398-021-01342-6}{\emph{\textcolor{blue}{Translational Psychiatry}}}. \newline}
 
-\cvitem{}{\textbf{Parkes L}, Satterthwaite TD \& Bassett DS (2020). Towards precise resting-state fMRI biomarkers in psychiatry: synthesizing developments in transdiagnostic research, dimensional models of psychopathology, and normative neurodevelopment. \textit{Current Opinion in Neurobiology}.}
+\cvitem{}{\textbf{Parkes L}, Satterthwaite TD \& Bassett DS (2020). Towards precise resting-state fMRI biomarkers in psychiatry: synthesizing developments in transdiagnostic research, dimensional models of psychopathology, and normative neurodevelopment. \href{https://www.sciencedirect.com/science/article/pii/S0959438820301616}{\emph{\textcolor{blue}{Current Opinion in Neurobiology}}}. \newline}
 
-\cvitem{}{\textbf{Parkes L}, Tiego J, Aquino K, Braganza L, Chamberlain SR, Fontenelle L, Harrison BJ, Lorenzetti V, Paton B, Razi A, Fornito A, \& Yucel M (2019). Transdiagnostic variations in impulsivity and compulsivity in obsessive-compulsive disorder and gambling disorder correlate with effective connectivity in cortical-striatal-thalamic-cortical circuits. \textit{NeuroImage}.}
+\cvitem{}{\textbf{Parkes L}, Tiego J, Aquino K, Braganza L, Chamberlain SR, Fontenelle L, Harrison BJ, Lorenzetti V, Paton B, Razi A, Fornito A, \& Yucel M (2019). Transdiagnostic variations in impulsivity and compulsivity in obsessive-compulsive disorder and gambling disorder correlate with effective connectivity in cortical-striatal-thalamic-cortical circuits. \href{https://www.sciencedirect.com/science/article/pii/S1053811919306585}{\emph{\textcolor{blue}{NeuroImage}}}. \newline}
 
-\cvitem{}{\textbf{Parkes L}, Fulcher B, Yucel M, \& Fornito A (2018). An evaluation of the efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI.
-\textit{NeuroImage}.
-\newline \textit{\textbf{Amongst the top 20 downloaded from the journal in 2018.}} \newline \textit{\textbf{In the top 0.01\% most cited publications relative to other publications in 2018 in the field of Neuroscience.}} }
+\cvitem{}{\textbf{Parkes L}, Fulcher B, Yucel M, \& Fornito A (2018). An evaluation of the efficacy, reliability, and sensitivity of motion correction strategies for resting-state functional MRI. \href{https://www.sciencedirect.com/science/article/pii/S1053811917310972}{\emph{\textcolor{blue}{NeuroImage}}}.}
+{\begin{itemize}
+  \item Amongst the top 20 downloaded from the journal in 2018
+  \item In the top 0.01\% most cited publications relative to other publications in 2018 in the field of Neuroscience \newline
+\end{itemize}
+}
 
-\cvitem{}{\textbf{Parkes L}, Fulcher B, Yucel M, \& Fornito A (2017). Transcriptional signatures of connectomic subregions of the human striatum. \textit{Genes, Brain and Behavior}.
-\newline \textit{\textbf{Amongst the top 20 downloaded from the journal in 2017.}} 
-\newline \textit{\textbf{Includes the application of supervised machine learning to the intersection of human neuroimaging and genetics.}} }
+\cvitem{}{\textbf{Parkes L}, Fulcher B, Yucel M, \& Fornito A (2017). Transcriptional signatures of connectomic subregions of the human striatum. \href{https://onlinelibrary.wiley.com/doi/full/10.1111/gbb.12386}{\emph{\textcolor{blue}{Genes, Brain and Behavior}}}.}
+{\begin{itemize}
+  \item Amongst the top 20 downloaded from the journal in 2017 \newline
+\end{itemize}
+}
 
-% \cvitem{}{*Prochazkova L, \textbf{*Parkes L}, Dawson A, Youssef G, Ferreira GM, Lorenzetti V, Segrave RA, Fontenelle LF, \& Yucel M (2017). Unpacking the role of self-reported compulsivity and impulsivity in obsessive-compulsive disorder. \textit{CNS spectrums}. \newline \textit{*These authors contributed equally.}}
-% \cvitem{}{}
+\cvitem{}{*Prochazkova L, \textbf{*Parkes L}, Dawson A, Youssef G, Ferreira GM, Lorenzetti V, Segrave RA, Fontenelle LF, \& Yucel M (2017). Unpacking the role of self-reported compulsivity and impulsivity in obsessive-compulsive disorder. \href{https://www.cambridge.org/core/journals/cns-spectrums/article/abs/unpacking-the-role-of-selfreported-compulsivity-and-impulsivity-in-obsessivecompulsive-disorder/3AE081173C6A8931ACDB7E779630DAD0}{\emph{\textcolor{blue}{CNS spectrums}}}.}
+\textit{*These authors contributed equally. }} \newline 
 
-% \cvitem{}{\textbf{Parkes L}, Perry C, \& Goodin P (2016). Examining the N400m in affectively negative sentences. A magnetoencephalography study. \textit{Psychophysiology}.}
+\cvitem{}{\textbf{Parkes L}, Perry C, \& Goodin P (2016). Examining the N400m in affectively negative sentences. A magnetoencephalography study. \href{https://onlinelibrary.wiley.com/doi/abs/10.1111/psyp.12601}{\emph{\textcolor{blue}{Psychophysiology}}}.}
+
 
 % \cvitem{}{}
 % \subsection{Middle-author}
